@@ -1,7 +1,9 @@
-# Sustune Care - Website Versions
+# sustune-care-website-versions
 
-Care for your property. Care for your parents. Peace of mind for you.
-Protected Care. Sustained Dignity.
+Three redesign concepts for the Sustune Care website: plain, modern, and distinct layouts.
+
+> **"Care for your property. Care for your parents. Peace of mind for you."**  
+> *Protected Care. Sustained Dignity.*
 
 Hyderabad & Bengaluru-based stewardship and eldercare services for Non-Resident Indians (NRIs):
 - **AEGIS**: Property stewardship (tenant scouting, rental management, maintenance, inspection reports).
