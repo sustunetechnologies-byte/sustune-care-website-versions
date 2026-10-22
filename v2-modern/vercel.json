@@ -30,10 +30,5 @@
       ]
     }
   ],
-  "rewrites": [
-    {
-      "source": "/assets/videos/:path*",
-      "destination": "../assets/videos/:path*"
-    }
-  ]
+  "cleanUrls": true
 }

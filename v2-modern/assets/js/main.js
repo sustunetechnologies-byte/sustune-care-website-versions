@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFaqAccordion();
   initScrollReveal();
   initCounters();
+  initHeroVideo();
   initReducedMotionHandling();
   updateCurrentYear();
 });
@@ -647,6 +648,46 @@ function initCounters() {
 }
 
 /**
+/**
+ * Robust Hero Video Autoplay with Muted Audio Enforcement and Interaction Fallback
+ */
+function initHeroVideo() {
+  const heroVid = document.getElementById("heroVideo");
+  if (!heroVid) return;
+
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (motionQuery.matches) {
+    heroVid.pause();
+    return;
+  }
+
+  // Enforce DOM muted properties required by modern autoplay security policies
+  heroVid.muted = true;
+  heroVid.defaultMuted = true;
+  heroVid.playsInline = true;
+
+  const attemptPlay = () => {
+    const playPromise = heroVid.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Fallback: Autoplay prevented until first user gesture
+        const onFirstInteraction = () => {
+          heroVid.play().catch(() => {});
+          window.removeEventListener("click", onFirstInteraction);
+          window.removeEventListener("touchstart", onFirstInteraction);
+          window.removeEventListener("scroll", onFirstInteraction);
+        };
+        window.addEventListener("click", onFirstInteraction, { passive: true, once: true });
+        window.addEventListener("touchstart", onFirstInteraction, { passive: true, once: true });
+        window.addEventListener("scroll", onFirstInteraction, { passive: true, once: true });
+      });
+    }
+  };
+
+  attemptPlay();
+}
+
+/**
  * Respect prefers-reduced-motion for background video & animations
  */
 function initReducedMotionHandling() {
@@ -660,6 +701,7 @@ function initReducedMotionHandling() {
       heroVid.currentTime = 0;
       heroVid.removeAttribute("autoplay");
     } else {
+      heroVid.muted = true;
       heroVid.play().catch(() => {});
     }
   }
