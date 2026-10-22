@@ -32,6 +32,10 @@
   ],
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/v2-modern/index.html"
+    },
+    {
       "source": "/v1-plain/assets/videos/:path*",
       "destination": "/assets/videos/:path*"
     },
@@ -42,13 +46,6 @@
     {
       "source": "/v2-modern/assets/video/:path*",
       "destination": "/assets/videos/:path*"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/v2-modern/",
-      "permanent": false
     }
   ]
 }
