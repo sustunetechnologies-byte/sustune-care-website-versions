@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Founder portrait placeholder">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D3B66" />
+      <stop offset="100%" stop-color="#0073B7" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="16" fill="url(#bgGrad1)" />
+  <!-- Stylized avatar silhouette -->
+  <circle cx="100" cy="78" r="38" fill="#F1F5F9" opacity="0.9" />
+  <path d="M40 185 c0 -35 27 -62 60 -62 s60 27 60 62 Z" fill="#F1F5F9" opacity="0.9" />
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#C99738" stroke-width="2" opacity="0.4" />
+</svg>

@@ -11,3 +11,7 @@ desktop.ini
 
 # Log files
 *.log
+
+# Local directory junctions for video assets
+v2-modern/assets/video
+v2-modern/assets/videos

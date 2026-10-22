@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  
+  /* Accessible body typography */
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1E293B;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headings typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  }
+
+  /* Focus visible accessibility outline */
+  :focus-visible {
+    outline: 2px solid #0073B7;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Accessible Skip-to-content Link */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: #0D3B66;
+    color: #FFFFFF;
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    z-index: 9999;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: top 0.2s ease;
+    text-decoration: none;
+  }
+  .skip-link:focus {
+    top: 1rem;
+    outline: 3px solid #C99738;
+  }
+
+  /* Primary Button per Brand Specs: bg #0073B7 hover #0D3B66 */
+  .btn-primary {
+    background-color: #0073B7;
+    color: #FFFFFF;
+    border-radius: 6px;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .btn-primary:hover {
+    background-color: #0D3B66;
+  }
+
+  /* Secondary Button per Brand Specs: bg #0A8754 hover #075F3B */
+  .btn-secondary {
+    background-color: #0A8754;
+    color: #FFFFFF;
+    border-radius: 6px;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .btn-secondary:hover {
+    background-color: #075F3B;
+  }
+
+  /* Outline Button per Brand Specs: border #C99738 */
+  .btn-outline {
+    border: 1px solid #C99738;
+    color: #0D3B66;
+    border-radius: 6px;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: all 0.2s ease;
+  }
+  .btn-outline:hover {
+    background-color: #F1F5F9;
+    border-color: #8B601C;
+  }
+
+  /* Strict Contrast Rule: Never white text on plain gold; Slate on gold */
+  .badge-gold {
+    background-color: #C99738;
+    color: #1E293B;
+    font-weight: 700;
+  }
+
+  /* Gold Divider Line */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #C99738 50%, transparent 100%);
+    opacity: 0.45;
+    width: 100%;
+  }
+
+  /* Hover Lift Effect */
+  .hover-lift {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -6px rgba(13, 59, 102, 0.12);
+  }
+
+  /* Stepper Active & Inactive states */
+  .step-active {
+    border-color: #0073B7;
+    background-color: #FFFFFF;
+    box-shadow: 0 8px 24px -4px rgba(0, 115, 183, 0.15);
+  }
+  .step-inactive {
+    opacity: 0.65;
+  }
+  .step-inactive:hover {
+    opacity: 0.9;
+  }
+}
+
+/* Scroll-reveal animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dark mode theme styles */
+.dark body {
+  background-color: #0B1E33;
+  color: #E2E8F0;
+}
+.dark .bg-white {
+  background-color: #0D2847;
+}
+.dark .bg-mist {
+  background-color: #091A2E;
+}
+.dark .border-slate-200 {
+  border-color: #1E3A5F;
+}
+.dark .border-slate-100 {
+  border-color: #162F4D;
+}
+.dark .text-deep-marine {
+  color: #F8FAFC;
+}
+.dark .text-slate-dark {
+  color: #E2E8F0;
+}
+.dark .text-slate-600 {
+  color: #94A3B8;
+}
+.dark .text-slate-700 {
+  color: #CBD5E1;
+}
+.dark .btn-outline {
+  border-color: #C99738;
+  color: #F8FAFC;
+}
+.dark .btn-outline:hover {
+  background-color: rgba(201, 151, 56, 0.15);
+}
+.dark .step-active {
+  background-color: #0D2847;
+  border-color: #0073B7;
+}
+.dark .step-inactive {
+  background-color: #091A2E;
+}
+
+/* Accessible video captions: bottom positioned, semi-transparent dark bg, white text */
+::cue,
+video::cue {
+  background-color: rgba(0, 0, 0, 0.82);
+  color: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Dark mode accessible text contrast enhancements (WCAG AA >= 4.5:1) */
+.dark .text-cerulean {
+  color: #7CC4F0;
+}
+.dark .text-emerald-care {
+  color: #6EE7B7;
+}
+.dark .text-burnished-bronze {
+  color: #F6D28B;
+}
+.dark .text-imperial-gold {
+  color: #F6D28B;
+}
+
+/* Respect prefers-reduced-motion (WCAG 2.1 AA) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hover-lift:hover {
+    transform: none !important;
+  }
+  .transition-all, .transition-transform, .transition-opacity {
+    transition: none !important;
+  }
+  video {
+    animation: none !important;
+  }
+}
