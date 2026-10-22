@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustune Care | Protected Care. Sustained Dignity.</title>
+  <meta name="description" content="Dedicated property stewardship (Aegis) and comprehensive parent eldercare (Sparsh) for NRIs in Hyderabad and Bengaluru. Care for your property. Care for your parents. Peace of mind for you.">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="../assets/logo/favicon_32x32.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/logo/favicon_192x192.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'imperial-gold': '#C99738',
+            'burnished-bronze': '#8B601C',
+            'cerulean': '#0073B7',
+            'deep-marine': '#0D3B66',
+            'emerald-care': '#0A8754',
+            'emerald-hover': '#075F3B',
+            'slate-dark': '#1E293B',
+            'mist': '#F1F5F9',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          borderRadius: {
+            'btn': '6px',
+            'card': '12px',
+          },
+          boxShadow: {
+            'soft': '0 4px 20px -2px rgba(13, 59, 102, 0.06)',
+            'soft-hover': '0 8px 26px -4px rgba(13, 59, 102, 0.10)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Base typography & color contrast safeguards */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1E293B;
+      background-color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0D3B66;
+    }
+    /* Buttons per brand specification */
+    .btn-primary {
+      background-color: #0073B7;
+      color: #FFFFFF;
+      border-radius: 6px;
+      transition: background-color 0.15s ease-in-out;
+    }
+    .btn-primary:hover {
+      background-color: #0D3B66;
+    }
+    .btn-secondary {
+      background-color: #0A8754;
+      color: #FFFFFF;
+      border-radius: 6px;
+      transition: background-color 0.15s ease-in-out;
+    }
+    .btn-secondary:hover {
+      background-color: #075F3B;
+    }
+    .btn-outline {
+      border: 1px solid #C99738;
+      color: #0D3B66;
+      border-radius: 6px;
+      background-color: transparent;
+      transition: all 0.15s ease-in-out;
+    }
+    .btn-outline:hover {
+      background-color: #F1F5F9;
+      border-color: #8B601C;
+    }
+    /* Thin gold divider line */
+    .gold-divider {
+      height: 1px;
+      background-color: #C99738;
+      opacity: 0.35;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white text-slate-dark text-base selection:bg-cerulean/15 selection:text-deep-marine">
+
+  <!-- TOP BAR / HEADER -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-[1100px] mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo Lockup -->
+      <a href="#hero" class="flex items-center gap-3 py-2 focus:outline-none focus:ring-2 focus:ring-cerulean rounded" aria-label="Sustune Care Home">
+        <img 
+          src="../assets/logo/sustune_logo_horizontal_lockup.svg" 
+          alt="Sustune Care - Protected Care. Sustained Dignity." 
+          class="h-12 w-auto object-contain block"
+          style="min-height: 48px;"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links (5 text links + 1 CTA) -->
+      <nav class="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+        <a href="#problem" class="text-sm font-medium text-slate-dark hover:text-cerulean transition-colors focus:outline-none focus:text-cerulean">The Problem</a>
+        <a href="#services" class="text-sm font-medium text-slate-dark hover:text-cerulean transition-colors focus:outline-none focus:text-cerulean">Services</a>
+        <a href="#how-it-works" class="text-sm font-medium text-slate-dark hover:text-cerulean transition-colors focus:outline-none focus:text-cerulean">How It Works</a>
+        <a href="#why-sustune" class="text-sm font-medium text-slate-dark hover:text-cerulean transition-colors focus:outline-none focus:text-cerulean">Why Sustune</a>
+        <a href="#faq" class="text-sm font-medium text-slate-dark hover:text-cerulean transition-colors focus:outline-none focus:text-cerulean">FAQ</a>
+      </nav>
+
+      <!-- Desktop Enquire CTA -->
+      <div class="hidden md:block">
+        <a href="https://forms.gle/o1y5bqXmaM8fCLvF8" target="_blank" rel="noopener noreferrer" class="enquiry-cta btn-primary px-5 py-2.5 text-sm font-semibold inline-flex items-center justify-center shadow-sm">
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        type="button" 
+        id="mobileMenuToggle" 
+        class="md:hidden p-2 text-slate-dark hover:text-cerulean focus:outline-none focus:ring-2 focus:ring-cerulean rounded" 
+        aria-expanded="false" 
+        aria-controls="mobileMenu"
+        aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburgerIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path id="closeIcon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4">
+      <nav class="flex flex-col space-y-3" aria-label="Mobile Navigation">
+        <a href="#problem" class="mobile-nav-link text-base font-medium text-slate-dark hover:text-cerulean py-1">The Problem</a>
+        <a href="#services" class="mobile-nav-link text-base font-medium text-slate-dark hover:text-cerulean py-1">Services</a>
+        <a href="#how-it-works" class="mobile-nav-link text-base font-medium text-slate-dark hover:text-cerulean py-1">How It Works</a>
+        <a href="#why-sustune" class="mobile-nav-link text-base font-medium text-slate-dark hover:text-cerulean py-1">Why Sustune</a>
+        <a href="#faq" class="mobile-nav-link text-base font-medium text-slate-dark hover:text-cerulean py-1">FAQ</a>
+        <a href="#contact" class="mobile-nav-link text-base font-medium text-slate-dark hover:text-cerulean py-1">Contact</a>
+      </nav>
+      <div class="pt-2">
+        <a href="https://forms.gle/o1y5bqXmaM8fCLvF8" target="_blank" rel="noopener noreferrer" class="enquiry-cta btn-primary w-full py-3 text-center text-sm font-semibold block shadow-sm">
+          Enquire Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER: Single column, centered, max-width 1100px -->
+  <main class="flex-grow">
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="py-20 md:py-28 px-6 bg-white text-center">
+      <div class="max-w-[860px] mx-auto">
+        <span class="inline-block text-xs uppercase tracking-widest font-semibold text-burnished-bronze bg-mist px-3.5 py-1.5 rounded-full mb-6">
+          Protected Care &bull; Sustained Dignity
+        </span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-deep-marine leading-tight md:leading-snug tracking-tight mb-6">
+          Care for your property. Care for your parents. Peace of mind for you.
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 font-normal leading-relaxed mb-10 max-w-[720px] mx-auto">
+          Dedicated stewardship for your homes and clinical-grade eldercare for your family in Hyderabad and Bengaluru.
+        </p>
+        <div class="flex justify-center">
+          <a href="https://forms.gle/o1y5bqXmaM8fCLvF8" target="_blank" rel="noopener noreferrer" class="enquiry-cta btn-primary px-8 py-3.5 text-base font-semibold shadow-sm inline-flex items-center gap-2">
+            Book a Consultation
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIN GOLD DIVIDER -->
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- 2. THE PROBLEM SECTION -->
+    <section id="problem" class="py-16 md:py-24 px-6 bg-white">
+      <div class="max-w-[1100px] mx-auto">
+        <div class="max-w-[780px] mx-auto text-center mb-14">
+          <span class="text-xs uppercase tracking-wider font-semibold text-cerulean block mb-2">The Anxiety of Distance</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-deep-marine tracking-tight mb-5">
+            Living thousands of miles away should not mean worrying every single day.
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+            For Non-Resident Indians, bridging oceans brings two quiet, persistent stresses: managing vacant or tenanted properties without local exploitation, and ensuring elderly parents have immediate, dignified care when emergencies or routine struggles arise.
+          </p>
+        </div>
+
+        <!-- Problem Breakdown Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[960px] mx-auto">
+          <!-- Property Stress -->
+          <div class="bg-mist p-8 rounded-card border border-slate-200/80 shadow-soft">
+            <div class="w-10 h-10 rounded-full bg-cerulean/10 flex items-center justify-center text-cerulean mb-5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-deep-marine mb-3">Property Neglect &amp; Friction</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Relying on unverified brokers or overburdened relatives leads to delayed rental reconciliations, uninspected water damage, tenant conflicts, and compounding maintenance costs.
+            </p>
+            <p class="text-xs font-semibold text-burnished-bronze uppercase tracking-wider">The Risk: Asset Depreciation &amp; Legal Exposure</p>
+          </div>
+
+          <!-- Parent Care Stress -->
+          <div class="bg-mist p-8 rounded-card border border-slate-200/80 shadow-soft">
+            <div class="w-10 h-10 rounded-full bg-emerald-care/10 flex items-center justify-center text-emerald-care mb-5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-deep-marine mb-3">Parent Vulnerability &amp; Isolation</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Midnight phone calls, sudden hospital visits, prescription delays, and bureaucratic paperwork leave aging parents isolated and family overseas feeling helpless.
+            </p>
+            <p class="text-xs font-semibold text-burnished-bronze uppercase tracking-wider">The Risk: Delayed Care &amp; Constant Anxiety</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIN GOLD DIVIDER -->
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- 3. SERVICES SECTION: AEGIS + SPARSH -->
+    <section id="services" class="py-16 md:py-24 px-6 bg-mist">
+      <div class="max-w-[1100px] mx-auto">
+        <div class="max-w-[780px] mx-auto text-center mb-14">
+          <span class="text-xs uppercase tracking-wider font-semibold text-cerulean block mb-2">Our Two Core Services</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-deep-marine tracking-tight mb-4">
+            Specialized oversight for what matters most.
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg">
+            A single, trusted institution delivering clinical-grade accountability for your assets and loved ones.
+          </p>
+        </div>
+
+        <!-- Two Clean Cards Side by Side -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto items-stretch">
+          
+          <!-- AEGIS CARD -->
+          <div class="bg-white p-8 md:p-10 rounded-card border border-slate-200 shadow-soft flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold tracking-widest text-cerulean uppercase">Service 01</span>
+                <span class="text-xs px-2.5 py-1 bg-cerulean/10 text-cerulean font-semibold rounded">Property Stewardship</span>
+              </div>
+              <h3 class="text-2xl font-extrabold text-deep-marine mb-3">AEGIS</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                End-to-end asset stewardship ensuring your residential real estate remains secure, fully occupied by vetted tenants, and continuously maintained.
+              </p>
+              
+              <div class="border-t border-slate-100 pt-6 mb-8">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Core Deliverables</p>
+                <ul class="space-y-3.5 text-sm text-slate-700">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-care flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Rigorous Tenant Scouting:</strong> Thorough background checks, verification, and registered lease agreement execution.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-care flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Rental &amp; Escrow Management:</strong> Punctual rent collection, automated utility dues, and transparent ledger accounting.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-care flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Preventive Maintenance:</strong> Regular plumbing, electrical, carpentry checkups, and verified vendor repair execution.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-care flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Inspection Reports:</strong> Timestamped high-resolution photographic audit reports delivered to your portal after every visit.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="https://forms.gle/o1y5bqXmaM8fCLvF8" target="_blank" rel="noopener noreferrer" class="enquiry-cta btn-primary w-full py-3 text-center text-sm font-semibold block shadow-sm">
+                Enquire for Aegis
+              </a>
+            </div>
+          </div>
+
+          <!-- SPARSH CARD -->
+          <div class="bg-white p-8 md:p-10 rounded-card border border-slate-200 shadow-soft flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold tracking-widest text-emerald-care uppercase">Service 02</span>
+                <span class="text-xs px-2.5 py-1 bg-emerald-care/10 text-emerald-care font-semibold rounded">Elder Parent Care</span>
+              </div>
+              <h3 class="text-2xl font-extrabold text-deep-marine mb-3">SPARSH</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                Compassionate, clinical-grade support for elderly parents, preserving their autonomy and dignity while guaranteeing rapid crisis response.
+              </p>
+              
+              <div class="border-t border-slate-100 pt-6 mb-8">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Core Deliverables</p>
+                <ul class="space-y-3.5 text-sm text-slate-700">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-care flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>24/7 Rapid SOS &amp; Emergency Dispatch:</strong> Immediate on-ground emergency response, ambulance coordination, and hospital liaison.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-care flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Doctor Escort &amp; Clinical Visits:</strong> Trained care coordinators accompanying parents to consultations and diagnostic clinics.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-care flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Daily Errands &amp; Medication Refills:</strong> Seamless coordination of pharmacy deliveries, banking errands, and household logistics.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-care flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>Warm Companionship &amp; Wellness Visits:</strong> Periodic home visits by dignified care managers ensuring mental health and engagement.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="https://forms.gle/o1y5bqXmaM8fCLvF8" target="_blank" rel="noopener noreferrer" class="enquiry-cta btn-secondary w-full py-3 text-center text-sm font-semibold block shadow-sm">
+                Enquire for Sparsh
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- THIN GOLD DIVIDER -->
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- 4. HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="py-16 md:py-24 px-6 bg-white">
+      <div class="max-w-[1100px] mx-auto">
+        <div class="max-w-[780px] mx-auto text-center mb-16">
+          <span class="text-xs uppercase tracking-wider font-semibold text-cerulean block mb-2">Clear &amp; Predictable Process</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-deep-marine tracking-tight mb-4">
+            How our stewardship works.
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg">
+            Structured onboarding and dedicated relationship management ensure absolute clarity at every step.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-[1000px] mx-auto">
+          <!-- Step 1 -->
+          <div class="p-6 bg-mist rounded-card border border-slate-200/80">
+            <span class="w-8 h-8 rounded-full bg-deep-marine text-white text-sm font-bold flex items-center justify-center mb-4">1</span>
+            <h3 class="text-base font-bold text-deep-marine mb-2">Consultation</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              We review your property condition or your parents' specific health, lifestyle, and logistical requirements in detail.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-6 bg-mist rounded-card border border-slate-200/80">
+            <span class="w-8 h-8 rounded-full bg-deep-marine text-white text-sm font-bold flex items-center justify-center mb-4">2</span>
+            <h3 class="text-base font-bold text-deep-marine mb-2">Care Manager Assigned</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              A permanent, vetted Sustune Care Manager is dedicated to your family as your singular point of local accountability.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-6 bg-mist rounded-card border border-slate-200/80">
+            <span class="w-8 h-8 rounded-full bg-deep-marine text-white text-sm font-bold flex items-center justify-center mb-4">3</span>
+            <h3 class="text-base font-bold text-deep-marine mb-2">Baseline Audit</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              We conduct a comprehensive physical audit of your property or an introductory health and safety review for parents.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="p-6 bg-mist rounded-card border border-slate-200/80">
+            <span class="w-8 h-8 rounded-full bg-deep-marine text-white text-sm font-bold flex items-center justify-center mb-4">4</span>
+            <h3 class="text-base font-bold text-deep-marine mb-2">Continuous Oversight</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Scheduled photo reports, real-time maintenance updates, and 24/7 emergency dispatch remain operational round the year.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIN GOLD DIVIDER -->
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- 5. WHY SUSTUNE SECTION -->
+    <section id="why-sustune" class="py-16 md:py-24 px-6 bg-mist">
+      <div class="max-w-[1100px] mx-auto">
+        <div class="max-w-[780px] mx-auto text-center mb-16">
+          <span class="text-xs uppercase tracking-wider font-semibold text-cerulean block mb-2">Our Operating Standard</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-deep-marine tracking-tight mb-4">
+            Why families entrust their legacy to Sustune Care.
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg">
+            We are not an informal aggregation app. We are an executive-governed stewardship institution built on precision and human dignity.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1000px] mx-auto">
+          <!-- Pillar 1 -->
+          <div class="bg-white p-8 rounded-card border border-slate-200 shadow-soft">
+            <div class="w-12 h-12 rounded-lg bg-cerulean/10 flex items-center justify-center text-cerulean mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-deep-marine mb-3">Clinical-Grade Oversight</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Standard operating procedures adapted from institutional healthcare and asset auditing protocols ensure zero lapses in response quality.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="bg-white p-8 rounded-card border border-slate-200 shadow-soft">
+            <div class="w-12 h-12 rounded-lg bg-emerald-care/10 flex items-center justify-center text-emerald-care mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-deep-marine mb-3">Transparent Reporting</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Every expense, repair invoice, doctor consultation summary, and inspection photo is cataloged with timestamped clarity. No hidden commissions.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="bg-white p-8 rounded-card border border-slate-200 shadow-soft">
+            <div class="w-12 h-12 rounded-lg bg-burnished-bronze/10 flex items-center justify-center text-burnished-bronze mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-deep-marine mb-3">20+ Years Leadership</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Guided by an executive leadership team with more than two decades of senior corporate, operations, and governance experience across India and globally.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIN GOLD DIVIDER -->
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- 6. CITIES SERVED -->
+    <section class="py-16 md:py-20 px-6 bg-white">
+      <div class="max-w-[1100px] mx-auto text-center">
+        <span class="text-xs uppercase tracking-wider font-semibold text-cerulean block mb-2">Our Locations</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-deep-marine tracking-tight mb-4">
+          Cities Served
+        </h2>
+        <p class="text-slate-600 text-base max-w-[640px] mx-auto mb-10">
+          Currently operating with on-ground response infrastructure and vetted local networks in South India’s primary NRI hubs.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[700px] mx-auto">
+          <!-- Hyderabad -->
+          <div class="p-6 bg-mist rounded-card border border-slate-200/80 text-left">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-xl font-bold text-deep-marine">Hyderabad</h3>
+              <span class="text-xs px-2 py-0.5 bg-cerulean text-white font-medium rounded">Active Operations</span>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Comprehensive coverage across Jubilee Hills, Banjara Hills, Gachibowli, Kondapur, Hitec City, Begumpet, and surrounding residential corridors.
+            </p>
+          </div>
+
+          <!-- Bengaluru -->
+          <div class="p-6 bg-mist rounded-card border border-slate-200/80 text-left">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-xl font-bold text-deep-marine">Bengaluru</h3>
+              <span class="text-xs px-2 py-0.5 bg-cerulean text-white font-medium rounded">Active Operations</span>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Active response teams across Indiranagar, Koramangala, Whitefield, HSR Layout, Jayanagar, Malleshwaram, and North Bengaluru.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIN GOLD DIVIDER -->
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- 7. VIDEO SECTION: Simple section with Launch Video only -->
+    <section id="videos" class="py-16 md:py-24 px-6 bg-mist">
+      <div class="max-w-[1100px] mx-auto">
+        <div class="max-w-[780px] mx-auto text-center mb-10">
+          <span class="text-xs uppercase tracking-wider font-semibold text-cerulean block mb-2">Introduction to Sustune</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-deep-marine tracking-tight mb-4">
+            Watch the Sustune Care Launch
+          </h2>
+          <p class="text-slate-600 text-base md:text-lg">
+            Understand how our unified stewardship model protects homes and preserves elder dignity.
+          </p>
+        </div>
+
+        <div class="max-w-[820px] mx-auto bg-white p-3 md:p-4 rounded-card border border-slate-200 shadow-soft">
+          <video 
+            class="w-full h-auto rounded-[8px] bg-slate-900 block" 
+            controls 
+            preload="none" 
+            playsinline
+            aria-label="Sustune Care Launch Video">
+            <source src="../assets/videos/launch.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIN GOLD DIVIDER -->
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- 8. FAQ SECTION -->
+    <section id="faq" class="py-16 md:py-24 px-6 bg-white">
+      <div class="max-w-[1100px] mx-auto">
+        <div class="max-w-[780px] mx-auto text-center mb-14">
+          <span class="text-xs uppercase tracking-wider font-semibold text-cerulean block mb-2">Frequently Asked Questions</span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-deep-marine tracking-tight mb-4">
+            Clear answers for peace of mind.
+          </h2>
+          <p class="text-slate-600 text-base">
+            Everything you need to know about our engagement, protocols, and accountability.
+          </p>
+        </div>
+
+        <div class="max-w-[800px] mx-auto space-y-4">
+          
+          <details class="group bg-mist p-6 rounded-card border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-deep-marine text-base md:text-lg focus:outline-none">
+              <span>How does Sustune handle medical emergencies for parents?</span>
+              <span class="ml-4 flex-shrink-0 text-cerulean group-open:rotate-180 transition-transform duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              Every Sparsh family has a dedicated Care Manager and 24/7 SOS dispatch protocol. In an emergency, our team immediately dispatches assistance, coordinates an ambulance to the family’s pre-registered preferred hospital, accompanies your parent through emergency admissions, and provides real-time updates to you overseas.
+            </p>
+          </details>
+
+          <details class="group bg-mist p-6 rounded-card border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-deep-marine text-base md:text-lg focus:outline-none">
+              <span>Can I choose Aegis (property) or Sparsh (parents) independently?</span>
+              <span class="ml-4 flex-shrink-0 text-cerulean group-open:rotate-180 transition-transform duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              Yes. Many clients engage us solely for Aegis property stewardship, while others engage us exclusively for Sparsh eldercare. If you require both, we integrate management under one lead Care Manager for complete family peace of mind.
+            </p>
+          </details>
+
+          <details class="group bg-mist p-6 rounded-card border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-deep-marine text-base md:text-lg focus:outline-none">
+              <span>How do you verify tenants and inspect properties under Aegis?</span>
+              <span class="ml-4 flex-shrink-0 text-cerulean group-open:rotate-180 transition-transform duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              We conduct institutional-grade employment and identity checks prior to lease execution. Our team performs periodic physical audits examining civil structures, fixtures, electrical systems, and pest intrusion, compiling a comprehensive photo audit report uploaded for your review.
+            </p>
+          </details>
+
+          <details class="group bg-mist p-6 rounded-card border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-deep-marine text-base md:text-lg focus:outline-none">
+              <span>How do international payments and billing work?</span>
+              <span class="ml-4 flex-shrink-0 text-cerulean group-open:rotate-180 transition-transform duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              We provide fully compliant international and domestic billing options with itemized monthly account statements. Third-party vendor expenses (such as major hardware repairs or diagnostic fees) require prior approval and are billed at cost with zero hidden markups.
+            </p>
+          </details>
+
+          <details class="group bg-mist p-6 rounded-card border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-deep-marine text-base md:text-lg focus:outline-none">
+              <span>What is the process to get started?</span>
+              <span class="ml-4 flex-shrink-0 text-cerulean group-open:rotate-180 transition-transform duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+              Click the "Enquire Now" button to submit your details via our secure form. Our executive advisory team will schedule a private discovery call accommodating your time zone, followed by an initial property or family care assessment.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- THIN GOLD DIVIDER -->
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- 9. CONTACT SECTION: Contact details plus ONE big Enquiry button -->
+    <section id="contact" class="py-16 md:py-24 px-6 bg-mist">
+      <div class="max-w-[900px] mx-auto text-center">
+        
+        <span class="text-xs uppercase tracking-wider font-semibold text-cerulean block mb-2">Connect With Us</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-deep-marine tracking-tight mb-4">
+          Speak with a Sustune Care Director.
+        </h2>
+        <p class="text-slate-600 text-base md:text-lg mb-12 max-w-[620px] mx-auto">
+          We welcome conversations with families seeking dignified, trustworthy care in Hyderabad and Bengaluru.
+        </p>
+
+        <!-- Contact Detail Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12 text-left">
+          
+          <!-- Phone & WhatsApp -->
+          <div class="bg-white p-6 rounded-card border border-slate-200 shadow-soft">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Telephone</p>
+            <a href="tel:+918985634239" class="text-sm font-semibold text-deep-marine hover:text-cerulean block transition-colors">
+              +91 89856 34239
+            </a>
+            <p class="text-xs text-slate-500 mt-1">Direct Line (India)</p>
+          </div>
+
+          <!-- WhatsApp Link -->
+          <div class="bg-white p-6 rounded-card border border-slate-200 shadow-soft">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">WhatsApp</p>
+            <a href="https://wa.me/12067136114" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-emerald-care hover:underline block">
+              +1 206 713 6114
+            </a>
+            <p class="text-xs text-slate-500 mt-1">NRI Support &amp; Chat</p>
+          </div>
+
+          <!-- Email -->
+          <div class="bg-white p-6 rounded-card border border-slate-200 shadow-soft sm:col-span-2 md:col-span-1">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Official Email</p>
+            <a href="mailto:contact@sustunecare.com" class="text-sm font-semibold text-deep-marine hover:text-cerulean block transition-colors">
+              contact@sustunecare.com
+            </a>
+            <p class="text-xs text-slate-500 mt-1">www.sustunecare.com</p>
+          </div>
+
+        </div>
+
+        <!-- Headquarters location note -->
+        <div class="mb-10 text-slate-600 text-sm">
+          <strong>Operating Headquarters:</strong> Hyderabad, Telangana, India &bull; Regional Support: Bengaluru, Karnataka, India
+        </div>
+
+        <!-- ONE BIG ENQUIRY BUTTON (opens GOOGLE_FORM_URL in new tab) -->
+        <div class="flex justify-center">
+          <a href="https://forms.gle/o1y5bqXmaM8fCLvF8" target="_blank" rel="noopener noreferrer" class="enquiry-cta btn-primary px-10 py-4 text-base md:text-lg font-bold shadow-soft hover:shadow-soft-hover inline-flex items-center gap-3">
+            <span>Submit Your Consultation Request</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 10. FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-12 px-6">
+    <div class="max-w-[1100px] mx-auto">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-8">
+        
+        <!-- Logo and Short Tagline -->
+        <div>
+          <img 
+            src="../assets/logo/sustune_logo_horizontal_lockup.svg" 
+            alt="Sustune Care" 
+            class="h-12 w-auto object-contain block mb-3"
+            style="min-height: 48px;"
+          />
+          <p class="text-xs text-slate-500 tracking-wide font-medium">
+            Protected Care. Sustained Dignity.
+          </p>
+        </div>
+
+        <!-- Quick Nav Links -->
+        <div class="flex flex-wrap gap-6 text-xs font-medium text-slate-600">
+          <a href="#hero" class="hover:text-cerulean transition-colors">Home</a>
+          <a href="#problem" class="hover:text-cerulean transition-colors">The Problem</a>
+          <a href="#services" class="hover:text-cerulean transition-colors">Services</a>
+          <a href="#how-it-works" class="hover:text-cerulean transition-colors">How It Works</a>
+          <a href="#why-sustune" class="hover:text-cerulean transition-colors">Why Sustune</a>
+          <a href="#faq" class="hover:text-cerulean transition-colors">FAQ</a>
+          <a href="#contact" class="hover:text-cerulean transition-colors">Contact</a>
+        </div>
+
+      </div>
+
+      <div class="gold-divider mb-6"></div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; <span id="currentYear">2026</span> Sustune Care. All rights reserved.</p>
+        <p>Hyderabad &bull; Bengaluru &bull; Serving Non-Resident Indians Worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Defined at the very top of script per prompt instructions
+    const GOOGLE_FORM_URL = "https://forms.gle/o1y5bqXmaM8fCLvF8";
+
+    // Bind every enquiry / consultation / get started CTA to open GOOGLE_FORM_URL in a new tab
+    document.addEventListener("DOMContentLoaded", () => {
+      const enquiryElements = document.querySelectorAll(".enquiry-cta");
+      enquiryElements.forEach(el => {
+        el.setAttribute("href", GOOGLE_FORM_URL);
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener noreferrer");
+      });
+
+      // Update current year dynamically
+      const yearEl = document.getElementById("currentYear");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // Mobile Menu Toggle
+      const toggleBtn = document.getElementById("mobileMenuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburgerIcon = document.getElementById("hamburgerIcon");
+      const closeIcon = document.getElementById("closeIcon");
+
+      if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener("click", () => {
+          const isOpen = mobileMenu.classList.contains("hidden") === false;
+          if (isOpen) {
+            mobileMenu.classList.add("hidden");
+            toggleBtn.setAttribute("aria-expanded", "false");
+            hamburgerIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+          } else {
+            mobileMenu.classList.remove("hidden");
+            toggleBtn.setAttribute("aria-expanded", "true");
+            hamburgerIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
+          }
+        });
+
+        // Close mobile menu when a navigation anchor is clicked
+        const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+        mobileLinks.forEach(link => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            toggleBtn.setAttribute("aria-expanded", "false");
+            hamburgerIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
