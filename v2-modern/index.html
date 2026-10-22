@@ -90,23 +90,23 @@
   <!-- ============================================================ -->
   <header 
     id="mainNavbar" 
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-[#0D3B66]/80 backdrop-blur-md border-b border-white/10"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 md:py-4 px-4 sm:px-6 bg-[#0D3B66]/90 backdrop-blur-md border-b border-white/10"
     role="banner">
-    <div class="max-w-[1240px] mx-auto px-6 flex items-center justify-between">
+    <div class="max-w-[1240px] mx-auto flex items-center justify-between gap-3 min-w-0">
       
       <!-- Brand Logo Lockup (Reversed white version on dark header) -->
-      <a href="#hero" class="flex items-center gap-3.5 focus-visible:ring-2 focus-visible:ring-cerulean rounded group" aria-label="Sustune Care Home">
+      <a href="#hero" class="flex items-center gap-2.5 sm:gap-3.5 focus-visible:ring-2 focus-visible:ring-cerulean rounded group min-w-0 flex-shrink" aria-label="Sustune Care Home">
         <img 
           src="../assets/logo/sustune_emblem_reversed_white.png" 
           onerror="this.onerror=null; this.src='assets/logo/sustune_emblem_reversed_white.png';" 
           alt="Sustune Care Logo" 
           width="48" 
           height="48"
-          class="h-12 w-auto object-contain block transition-transform group-hover:scale-105"
+          class="h-12 w-auto object-contain block transition-transform group-hover:scale-105 flex-shrink-0"
           style="min-height: 48px;"
         />
-        <div class="flex flex-col text-left">
-          <span class="font-heading font-extrabold text-xl tracking-wider text-white leading-none whitespace-nowrap">SUSTUNE CARE</span>
+        <div class="flex flex-col text-left min-w-0">
+          <span class="font-heading font-extrabold text-[17px] sm:text-xl tracking-wider text-white leading-none whitespace-nowrap">SUSTUNE CARE</span>
           <span class="hidden xl:inline-block text-[9.5px] font-semibold text-imperial-gold tracking-widest uppercase mt-1 whitespace-nowrap">Protected Care &bull; Sustained Dignity</span>
         </div>
       </a>
@@ -121,14 +121,14 @@
         <a href="#contact" class="text-sm font-medium text-slate-200 hover:text-white transition-colors whitespace-nowrap">Contact</a>
       </nav>
 
-      <!-- Theme Toggle & Consultation CTA Buttons -->
-      <div class="flex items-center gap-3">
+      <!-- Theme Toggle & Navigation Controls -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
         
-        <!-- Light / Dark Theme Toggle Button -->
+        <!-- Light / Dark Theme Toggle Button (44px target) -->
         <button 
           type="button" 
           id="themeToggleBtn" 
-          class="p-2.5 rounded-full text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-imperial-gold min-w-[44px] min-h-[44px] flex items-center justify-center"
+          class="p-2.5 rounded-full text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-imperial-gold w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
           aria-label="Toggle color theme">
           <!-- Sun Icon (shown in dark mode) -->
           <svg id="themeSunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,25 +140,25 @@
           </svg>
         </button>
 
-        <!-- Desktop Enquire CTA -->
+        <!-- Desktop Enquire CTA (Hidden on mobile under md / 768px) -->
         <a 
           href="https://forms.gle/o1y5bqXmaM8fCLvF8" 
           target="_blank" 
-          rel="noopener noreferrer"
-          class="enquiry-cta btn-primary px-5 py-2.5 text-sm font-semibold shadow-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cerulean whitespace-nowrap">
+          rel="noopener noreferrer" 
+          class="hidden md:inline-flex enquiry-cta btn-primary px-5 py-2.5 text-sm font-semibold shadow-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cerulean whitespace-nowrap items-center">
           <span>Enquire Now</span>
           <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
 
-        <!-- Mobile Menu Toggle Button (Visible below 1024px) -->
+        <!-- Mobile Menu Toggle Button (Visible below 1024px, 44px touch target) -->
         <button 
           type="button" 
           id="mobileMenuToggle" 
-          class="lg:hidden p-2 text-white hover:text-cerulean focus-visible:ring-2 focus-visible:ring-cerulean rounded min-h-[44px] min-w-[44px] flex items-center justify-center" 
+          class="lg:hidden p-2 text-white hover:text-cerulean hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-cerulean rounded w-11 h-11 min-h-[44px] min-w-[44px] flex items-center justify-center flex-shrink-0" 
           aria-expanded="false" 
-          aria-haspopup="true"
-          aria-controls="mobileMenu"
-          aria-label="Toggle navigation menu">
+          aria-haspopup="true" 
+          aria-controls="mobileMenu" 
+          aria-label="Open menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path id="hamburgerIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             <path id="closeIcon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -168,21 +168,71 @@
 
     </div>
 
-    <!-- Mobile Navigation Drawer (Visible below 1024px when expanded) -->
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-[#0D3B66]/98 backdrop-blur-xl px-6 py-6 space-y-4">
-      <nav class="flex flex-col space-y-3.5" aria-label="Mobile Navigation">
-        <a href="#services" class="mobile-nav-link text-base font-medium text-slate-200 hover:text-white py-1">Services (Aegis &amp; Sparsh)</a>
-        <a href="#how-it-works" class="mobile-nav-link text-base font-medium text-slate-200 hover:text-white py-1">How It Works</a>
-        <a href="#founders" class="mobile-nav-link text-base font-medium text-slate-200 hover:text-white py-1">Meet the Founders</a>
-        <a href="#videos" class="mobile-nav-link text-base font-medium text-slate-200 hover:text-white py-1">Video Gallery</a>
-        <a href="#faq" class="mobile-nav-link text-base font-medium text-slate-200 hover:text-white py-1">FAQ</a>
-        <a href="#contact" class="mobile-nav-link text-base font-medium text-slate-200 hover:text-white py-1">Contact Director</a>
-      </nav>
-      <div class="pt-3 border-t border-white/10">
-        <a href="https://forms.gle/o1y5bqXmaM8fCLvF8" target="_blank" rel="noopener noreferrer" class="enquiry-cta btn-primary w-full py-3.5 text-center text-sm font-semibold block shadow-sm whitespace-nowrap">
-          Submit Consultation Request
+    <!-- Mobile Navigation Drawer (Visible below 1024px when expanded, max-height scrollable) -->
+    <div 
+      id="mobileMenu" 
+      class="hidden lg:hidden border-t border-white/10 bg-[#0D3B66]/98 backdrop-blur-xl px-4 py-4 space-y-2 overflow-y-auto max-h-[calc(100vh-68px)] shadow-2xl">
+      
+      <!-- Top Full-Width Enquire CTA Button (First in drawer) -->
+      <div class="pb-2.5 border-b border-white/10">
+        <a 
+          href="https://forms.gle/o1y5bqXmaM8fCLvF8" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="enquiry-cta btn-primary w-full py-3.5 px-4 text-center text-sm font-bold shadow-md whitespace-nowrap min-h-[48px] flex items-center justify-center gap-2 rounded-lg">
+          <span>Enquire Now (Free Consultation)</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
+
+      <!-- ALL Section Links as Large 48px Touch Targets with >= 4.5:1 Contrast -->
+      <nav class="flex flex-col space-y-1" aria-label="Mobile Section Navigation">
+        <a href="#problem" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>The Problem</span>
+        </a>
+        <a href="#services" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>Services (Aegis &amp; Sparsh)</span>
+        </a>
+        <a href="#how-it-works" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>How It Works</span>
+        </a>
+        <a href="#what-you-need" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>What You Need</span>
+        </a>
+        <a href="#estimator" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>Estimator</span>
+        </a>
+        <a href="#why-sustune" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>Why Sustune</span>
+        </a>
+        <a href="#founders" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>Meet the Founders</span>
+        </a>
+        <a href="#cities" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>Cities Served</span>
+        </a>
+        <a href="#videos" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>Video Gallery</span>
+        </a>
+        <a href="#faq" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors border-b border-white/5">
+          <span>Frequently Asked Questions</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link min-h-[48px] flex items-center px-3.5 rounded-lg text-[15px] font-semibold text-slate-100 hover:text-white hover:bg-white/10 transition-colors">
+          <span>Contact Director</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Secondary Form Link -->
+      <div class="pt-2.5 border-t border-white/10">
+        <a 
+          href="https://forms.gle/o1y5bqXmaM8fCLvF8" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="enquiry-cta btn-secondary w-full py-3.5 px-4 text-center text-sm font-bold block shadow-sm whitespace-nowrap min-h-[48px] flex items-center justify-center rounded-lg">
+          <span>Submit Consultation Request</span>
+        </a>
+      </div>
+
     </div>
   </header>
 
@@ -194,7 +244,7 @@
     <!-- ============================================================ -->
     <!-- 1. FULL-SCREEN HERO WITH VIDEO BG & INTERACTIVE TOGGLE       -->
     <!-- ============================================================ -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-28 pb-16 overflow-hidden bg-deep-marine text-white">
+    <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-28 pb-28 sm:pb-20 overflow-hidden bg-deep-marine text-white">
       
       <!-- Decorative Video Background with Muted Looping and Dark Marine Overlay -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
@@ -305,7 +355,7 @@
     <!-- ============================================================ -->
     <!-- 2. THE PROBLEM SECTION: THE ANXIETY OF DISTANCE              -->
     <!-- ============================================================ -->
-    <section id="problem" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll" aria-labelledby="problem-heading">
+    <section id="problem" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll scroll-mt-20" aria-labelledby="problem-heading">
       <div class="max-w-[1100px] mx-auto">
         
         <div class="max-w-[800px] mx-auto text-center mb-16">
@@ -368,7 +418,7 @@
     <!-- ============================================================ -->
     <!-- 3. SERVICES SECTION WITH INTERACTIVE TABS                    -->
     <!-- ============================================================ -->
-    <section id="services" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll" aria-labelledby="services-heading">
+    <section id="services" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll scroll-mt-20" aria-labelledby="services-heading">
       <div class="max-w-[1140px] mx-auto">
         
         <div class="max-w-[800px] mx-auto text-center mb-14">
@@ -548,7 +598,7 @@
     <!-- ============================================================ -->
     <!-- 4. INTERACTIVE "HOW IT WORKS" STEPPER                        -->
     <!-- ============================================================ -->
-    <section id="how-it-works" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll" aria-labelledby="how-it-works-heading">
+    <section id="how-it-works" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll scroll-mt-20" aria-labelledby="how-it-works-heading">
       <div class="max-w-[1100px] mx-auto">
         
         <div class="max-w-[780px] mx-auto text-center mb-16">
@@ -667,7 +717,8 @@
     <!-- ============================================================ -->
     <!-- 5. INTERACTIVE "WHAT DO YOU NEED?" SELECTOR                  -->
     <!-- ============================================================ -->
-    <section id="selector" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll" aria-labelledby="selector-heading">
+    <section id="what-you-need" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll scroll-mt-20" aria-labelledby="selector-heading">
+      <span id="selector" class="scroll-mt-20" aria-hidden="true"></span>
       <div class="max-w-[1100px] mx-auto">
         
         <div class="max-w-[780px] mx-auto text-center mb-14">
@@ -775,7 +826,7 @@
     <!-- ============================================================ -->
     <!-- 6. SAMPLE EFFORT & COORDINATION ESTIMATOR                   -->
     <!-- ============================================================ -->
-    <section id="estimator" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll" aria-labelledby="estimator-heading">
+    <section id="estimator" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll scroll-mt-20" aria-labelledby="estimator-heading">
       <div class="max-w-[960px] mx-auto">
         
         <div class="text-center mb-12">
@@ -860,7 +911,7 @@
     <!-- ============================================================ -->
     <!-- 7. WHY SUSTUNE SECTION WITH ANIMATED COUNTERS                -->
     <!-- ============================================================ -->
-    <section id="why-sustune" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll" aria-labelledby="why-heading">
+    <section id="why-sustune" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll scroll-mt-20" aria-labelledby="why-heading">
       <div class="max-w-[1140px] mx-auto">
         
         <div class="max-w-[800px] mx-auto text-center mb-16">
@@ -959,7 +1010,7 @@
     <!-- ============================================================ -->
     <!-- 8. MEET THE FOUNDERS SECTION (BENCHMARK INTERN TEMPLATE)     -->
     <!-- ============================================================ -->
-    <section id="founders" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll" aria-labelledby="founders-heading">
+    <section id="founders" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll scroll-mt-20" aria-labelledby="founders-heading">
       <div class="max-w-[1140px] mx-auto">
         
         <div class="max-w-[800px] mx-auto text-center mb-16">
@@ -1128,7 +1179,7 @@
     <!-- ============================================================ -->
     <!-- 9. CITIES SERVED SECTION                                     -->
     <!-- ============================================================ -->
-    <section id="cities" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll" aria-labelledby="cities-heading">
+    <section id="cities" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll scroll-mt-20" aria-labelledby="cities-heading">
       <div class="max-w-[1100px] mx-auto text-center">
         
         <span class="text-xs uppercase tracking-widest font-bold text-cerulean block mb-3">Our On-Ground Infrastructure</span>
@@ -1184,7 +1235,7 @@
     <!-- ============================================================ -->
     <!-- 10. VIDEO GALLERY WITH PLAY-ON-CLICK CARDS                   -->
     <!-- ============================================================ -->
-    <section id="videos" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll" aria-labelledby="videos-heading">
+    <section id="videos" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll scroll-mt-20" aria-labelledby="videos-heading">
       <div class="max-w-[1140px] mx-auto">
         
         <div class="max-w-[800px] mx-auto text-center mb-16">
@@ -1349,7 +1400,7 @@
     <!-- ============================================================ -->
     <!-- 11. FAQ ACCORDION SECTION                                    -->
     <!-- ============================================================ -->
-    <section id="faq" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll" aria-labelledby="faq-heading">
+    <section id="faq" class="py-20 md:py-28 px-6 bg-mist reveal-on-scroll scroll-mt-20" aria-labelledby="faq-heading">
       <div class="max-w-[1000px] mx-auto">
         
         <div class="max-w-[780px] mx-auto text-center mb-16">
@@ -1457,7 +1508,7 @@
     <!-- ============================================================ -->
     <!-- 12. CONTACT SECTION WITH ONE BIG ENQUIRY BUTTON              -->
     <!-- ============================================================ -->
-    <section id="contact" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll" aria-labelledby="contact-heading">
+    <section id="contact" class="py-20 md:py-28 px-6 bg-white reveal-on-scroll scroll-mt-20" aria-labelledby="contact-heading">
       <div class="max-w-[960px] mx-auto text-center">
         
         <span class="text-xs uppercase tracking-widest font-bold text-cerulean block mb-3">Direct Executive Advisory</span>
@@ -1534,7 +1585,7 @@
   <!-- ============================================================ -->
   <!-- 13. FOOTER                                                   -->
   <!-- ============================================================ -->
-  <footer class="bg-deep-marine text-white border-t border-slate-700/60 py-14 px-6" role="contentinfo">
+  <footer class="bg-deep-marine text-white border-t border-slate-700/60 pt-14 pb-28 sm:pb-20 px-6" role="contentinfo">
     <div class="max-w-[1240px] mx-auto">
       
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
@@ -1590,7 +1641,7 @@
   </footer>
 
   <!-- ============================================================ -->
-  <!-- FLOATING WHATSAPP BUTTON (WCAG AA >= 44px Touch Target)      -->
+  <!-- FLOATING WHATSAPP BUTTON (56px circle on mobile, no overlap) -->
   <!-- ============================================================ -->
   <aside aria-label="Quick WhatsApp Contact">
     <a 
@@ -1598,12 +1649,12 @@
       target="_blank" 
       rel="noopener noreferrer" 
       id="floatingWhatsApp"
-      class="fixed bottom-6 right-6 z-40 bg-emerald-care hover:bg-emerald-hover text-white shadow-xl hover:shadow-2xl p-3.5 rounded-full flex items-center gap-2.5 transition-transform hover:scale-105 focus-visible:ring-4 focus-visible:ring-emerald-care/50 min-h-[48px] min-w-[48px]"
-      aria-label="Chat with Sustune Care NRI Director on WhatsApp (Opens in new tab)">
-      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+      class="fixed z-40 bg-emerald-care hover:bg-emerald-hover text-white shadow-xl hover:shadow-2xl rounded-full flex items-center justify-center transition-transform hover:scale-105 focus-visible:ring-4 focus-visible:ring-emerald-care/50"
+      style="right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 56px; height: 56px; min-width: 56px; min-height: 56px;"
+      aria-label="Chat with Sustune Care on WhatsApp">
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.47c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/>
       </svg>
-      <span class="hidden sm:inline-block text-xs font-bold tracking-wide pr-1">WhatsApp NRI Direct</span>
     </a>
   </aside>
 

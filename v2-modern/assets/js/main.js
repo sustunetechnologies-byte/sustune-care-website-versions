@@ -208,11 +208,11 @@ function initNavbarScroll() {
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 40) {
-      navbar.classList.remove("py-4", "bg-[#0D3B66]/80");
-      navbar.classList.add("py-2.5", "bg-[#0D3B66]/95", "shadow-lg", "border-cerulean/20");
+      navbar.classList.remove("py-3", "md:py-4", "bg-[#0D3B66]/90");
+      navbar.classList.add("py-2", "md:py-2.5", "bg-[#0D3B66]/98", "shadow-lg", "border-cerulean/20");
     } else {
-      navbar.classList.remove("py-2.5", "bg-[#0D3B66]/95", "shadow-lg", "border-cerulean/20");
-      navbar.classList.add("py-4", "bg-[#0D3B66]/80");
+      navbar.classList.remove("py-2", "md:py-2.5", "bg-[#0D3B66]/98", "shadow-lg", "border-cerulean/20");
+      navbar.classList.add("py-3", "md:py-4", "bg-[#0D3B66]/90");
     }
   }, { passive: true });
 }
@@ -296,21 +296,29 @@ function initMobileMenu() {
   function openMenu() {
     menu.classList.remove("hidden");
     toggleBtn.setAttribute("aria-expanded", "true");
+    toggleBtn.setAttribute("aria-label", "Close menu");
     if (hamburgerIcon) hamburgerIcon.classList.add("hidden");
     if (closeIcon) closeIcon.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+
+    // Focus first interactive element in menu
     const firstLink = menu.querySelector("a, button");
     if (firstLink) firstLink.focus();
   }
 
   function closeMenu(restoreFocus = true) {
+    if (menu.classList.contains("hidden")) return;
     menu.classList.add("hidden");
     toggleBtn.setAttribute("aria-expanded", "false");
+    toggleBtn.setAttribute("aria-label", "Open menu");
     if (hamburgerIcon) hamburgerIcon.classList.remove("hidden");
     if (closeIcon) closeIcon.classList.add("hidden");
+    document.body.style.overflow = "";
     if (restoreFocus) toggleBtn.focus();
   }
 
-  toggleBtn.addEventListener("click", () => {
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
     const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
     if (isExpanded) {
       closeMenu(false);
@@ -319,12 +327,22 @@ function initMobileMenu() {
     }
   });
 
+  // Close when tapping outside the menu and toggle button
+  document.addEventListener("click", (e) => {
+    const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+    if (isExpanded && !menu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeMenu(false);
+    }
+  });
+
+  // Close on link click and allow smooth scroll to section
   menu.querySelectorAll(".mobile-nav-link, a").forEach(link => {
     link.addEventListener("click", () => {
       closeMenu(false);
     });
   });
 
+  // Keyboard accessibility: Escape key and focus trapping
   document.addEventListener("keydown", (e) => {
     const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
     if (!isExpanded) return;
